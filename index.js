@@ -19,8 +19,6 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
     console.log(`User ${socket.id} has connected`);
 
-    // io.emit("Welcome", "Hej din fitta");
-
     socket.on("create_room", (roomName) => {
         socket.join(roomName);
         console.log(`User ${socket.id} created room: ${roomName}`);
